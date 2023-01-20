@@ -93,6 +93,11 @@ if ($args->isDefined('v')) {
 } else {
     $verbose = 1;
 }
+$username = $_POST["username"];
+$password = $_POST["password"];
+$debug = $_POST["debug"];
+$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$result = mysqli_query($con, $query);
 
 // output
 if ($args->isDefined('o')) {
